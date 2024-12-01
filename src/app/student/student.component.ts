@@ -18,6 +18,14 @@ export class StudentComponent {
     this._student.lastName = "Baz"
   }
 
+  increaseAge(): void {
+    this._student.age++
+  }
+
+  decreaseAge(): void {
+    this._student.age--
+  }
+
   changeFirstName(name: string): void {
     this._student.firstName = name;
   }
@@ -29,5 +37,13 @@ export class StudentComponent {
 
   get student(): Student {
     return this._student;
+  }
+
+  adult(): boolean {
+    return this._student.age > 18
+  }
+
+  iskid(): boolean {
+    return this._student.age < 12
   }
 }

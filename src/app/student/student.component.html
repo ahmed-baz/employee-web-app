@@ -1,16 +1,23 @@
-<h3>student first name is {{ student.firstName }}</h3>
-<h3>student last name is {{ student.lastName }}</h3>
-<h3>student age is {{ student.age }}</h3>
-
-<div class="col-first">
-  <label>First Name</label>
-  <input type="text" #inputFirstName [value]="student.firstName" (keyup)="changeFirstName(inputFirstName.value)"/>
+<div class="card" style="width: 24rem;">
+  <img [src]="student.imageUrl" class="card-img-top" alt="student">
+  <div class="card-body">
+    <h5 class="card-title">Hello {{ student.getFullName() }}</h5>
+    <p class="card-text">First name <b>{{ student.firstName }}</b></p>
+    <p class="card-text">Last name <b>{{ student.lastName }}</b></p>
+    <p class="card-text">Age <b
+      [ngClass]="{'red-color':adult(),'green-color':iskid()}">{{ student.age }}</b>
+      <span class="text-bg-warning" *ngIf="adult()"> Note the student is Adult</span>
+    </p>
+  </div>
+  <div class="card-footer">
+    <input type="text" placeholder="first name" #inputFirstName [value]="student.firstName"
+           (keyup.enter)="changeFirstName(inputFirstName.value)"/>
+    <input type="text" placeholder="last name" [(ngModel)]="student.lastName"/>
+    <hr/>
+    <div class="flex-row justify-content-center">
+      <button type="button" class="btn btn-primary mr-3" (click)="changeName()">Change name</button>
+      <button type="button" class="btn btn-success mr-3" (click)="increaseAge()"><i class="fa fa-add"></i></button>
+      <button type="button" class="btn btn-danger mr-3" (click)="decreaseAge()"><i class="fa fa-subtract"></i></button>
+    </div>
+  </div>
 </div>
-<div>
-  <label>Last Name</label>
-  <input type="text" [(ngModel)]="student.lastName"/>
-</div>
-<br>
-<img style="height: 200px; width: 200px" [src]="student.imageUrl" alt="student">
-<br>
-<button (click)="changeName()">change name</button>

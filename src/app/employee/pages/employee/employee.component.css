@@ -1,84 +1,88 @@
-/* Global Styles */
-* {
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
 }
 
-body {
-  background-color: #f4f7fc;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
-
+/* Container */
 .container {
-  background-color: #ffffff;
-  padding: 30px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
-  width: 80%;
-  max-width: 1000px;
 }
 
+/* Header */
 h1 {
   text-align: center;
-  margin-bottom: 20px;
-  font-size: 2rem;
   color: #333;
 }
 
-/* Table Styles */
-
-.centered-table {
-  width: 80%;
-  border-collapse: collapse;
-  margin: 20px auto;
-  background-color: #fff;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.centered-table th, .centered-table td {
-  padding: 12px;
-  text-align: left;
-  border: 1px solid #ddd;
-}
-
-.centered-table th {
-  background-color: #4CAF50;
-  color: white;
-  font-weight: bold;
-}
-
-.centered-table tr:nth-child(even) {
-  background-color: #f9f9f9;
-}
-
-.centered-table tr:hover {
-  background-color: #f1f1f1;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-  .container {
-    width: 90%;
-    padding: 20px;
-  }
-
-  .search-box {
-    font-size: 14px;
-  }
-}
-
-
-.search-box {
-  width: 100%;
-  padding: 12px;
+/* Search Bar */
+.search-container {
+  text-align: center;
   margin-bottom: 20px;
+}
+
+.search-container input {
+  width: 80%;
+  padding: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
 }
 
+/* Table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th, table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: left;
+}
+
+table th {
+  background-color: #007bff;
+  color: #fff;
+}
+
+table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.pagination button {
+  padding: 8px 12px;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.pagination button:hover {
+  background-color: #0056b3;
+}
+
+.pagination button[disabled] {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

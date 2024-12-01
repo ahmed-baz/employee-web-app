@@ -1,0 +1,16 @@
+<h3>student first name is {{ student.firstName }}</h3>
+<h3>student last name is {{ student.lastName }}</h3>
+<h3>student age is {{ student.age }}</h3>
+
+<div class="col-first">
+  <label>First Name</label>
+  <input type="text" #inputFirstName [value]="student.firstName" (keyup)="changeFirstName(inputFirstName.value)"/>
+</div>
+<div>
+  <label>Last Name</label>
+  <input type="text" [(ngModel)]="student.lastName"/>
+</div>
+<br>
+<img style="height: 200px; width: 200px" [src]="student.imageUrl" alt="student">
+<br>
+<button (click)="changeName()">change name</button>

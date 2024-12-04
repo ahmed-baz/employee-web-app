@@ -3,7 +3,7 @@ export class Student {
   private _firstName: string = 'John';
   private _lastName: string = 'Doe';
   private _age: number = 15;
-  private _imageUrl: string = "/logo.jpg";
+  private _imageUrl: string = "/student.jpg";
 
   getFullName(): string {
     return this._firstName + ' ' + this._lastName;

@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Employee} from '../../model/employee';
+import {EmployeeService} from '../../service/employee.service';
 
 @Component({
   selector: 'app-employee',
@@ -9,15 +10,54 @@ import {Employee} from '../../model/employee';
 export class EmployeeComponent implements OnInit {
 
   private _employees: Employee[] = [];
+  private errorMessage: string | undefined = '';
 
-  ngOnInit(): void {
-    this._employees.push(new Employee(1, 'John', 'Doe', 'john@example.com', 1000, new Date()));
-    this._employees.push(new Employee(2, 'Ahmed', 'Ali', 'ahmed@example.com', 1500, new Date()));
-    this._employees.push(new Employee(2, 'Hassan', 'Ahmed', 'hassan@example.com', 2000, new Date()));
+  constructor(
+    private employeeService: EmployeeService) {
   }
 
+  ngOnInit(): void {
+    this.findAllEmployees()
+  }
 
   get employees(): Employee[] {
     return this._employees;
+  }
+
+  findAllEmployees() {
+    this.employeeService
+      .findAll()
+      .subscribe({
+        next: (res) => {
+          if (200 == res.statusCode) {
+            this._employees = res.data as Employee[];
+          } else {
+            this.errorMessage = res.message
+          }
+        },
+        error: (error) => {
+          console.log(error)
+          this.errorMessage = error
+        }
+      })
+  }
+
+  deleteEmployee(id: number | undefined) {
+    this.employeeService
+      .delete(id!)
+      .subscribe({
+        next: (res) => {
+          if (200 != res.statusCode) {
+            this.errorMessage = res.message
+          }
+        },
+        error: (error) => {
+          console.log(error)
+          this.errorMessage = error
+        },
+        complete: () => {
+          this.findAllEmployees()
+        }
+      })
   }
 }

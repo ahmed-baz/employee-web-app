@@ -1,13 +1,14 @@
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
-import { StudentComponent } from './school/pages/student/student.component';
+import {AppRoutingModule} from './app-routing.module';
+import {AppComponent} from './app.component';
+import {StudentComponent} from './school/pages/student/student.component';
 import {FormsModule} from "@angular/forms";
-import { EmployeeComponent } from './employee/pages/employee/employee.component';
-import { TaskComponent } from './school/pages/task/task.component';
-import { MaxLengthPipe } from './school/pipes/max-length.pipe';
+import {EmployeeComponent} from './employee/pages/employee/employee.component';
+import {TaskComponent} from './school/pages/task/task.component';
+import {MaxLengthPipe} from './school/pipes/max-length.pipe';
+import {HttpClient, HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -17,12 +18,16 @@ import { MaxLengthPipe } from './school/pipes/max-length.pipe';
     TaskComponent,
     MaxLengthPipe
   ],
-    imports: [
-        BrowserModule,
-        AppRoutingModule,
-        FormsModule
-    ],
-  providers: [],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    FormsModule,
+    HttpClientModule,
+  ],
+  providers: [
+    HttpClient,
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}

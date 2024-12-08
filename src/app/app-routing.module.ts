@@ -7,7 +7,7 @@ import {TaskComponent} from './school/pages/task/task.component';
 const routes: Routes = [
   {
     path: '',
-    component: TaskComponent
+    component: EmployeeComponent
   },
   {
     path: 'students',
@@ -16,6 +16,10 @@ const routes: Routes = [
   {
     path: 'employees',
     component: EmployeeComponent
+  },
+  {
+    path: 'tasks',
+    component: TaskComponent
   }
 ];
 

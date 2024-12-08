@@ -8,7 +8,7 @@ import {FormsModule} from "@angular/forms";
 import {EmployeeComponent} from './employee/pages/employee/employee.component';
 import {TaskComponent} from './school/pages/task/task.component';
 import {MaxLengthPipe} from './school/pipes/max-length.pipe';
-import {HttpClient, HttpClientModule} from '@angular/common/http';
+import {HttpClient, provideHttpClient} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,11 +21,11 @@ import {HttpClient, HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
+    FormsModule
   ],
   providers: [
     HttpClient,
+    provideHttpClient()
   ],
   bootstrap: [AppComponent]
 })

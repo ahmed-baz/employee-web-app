@@ -3,6 +3,10 @@
   <div class="search-container">
     <input type="text" placeholder="Search...">
   </div>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert" *ngIf="isVisible">
+    <strong>Info!</strong> {{ errorMessage }}
+  </div>
+  <app-spinner *ngIf="isLoading"></app-spinner>
   <table>
     <thead>
     <tr>

@@ -10,7 +10,9 @@ import {EmployeeService} from '../../service/employee.service';
 export class EmployeeComponent implements OnInit {
 
   private _employees: Employee[] = [];
-  private errorMessage: string | undefined = '';
+  errorMessage: string | undefined = '';
+  isLoading: boolean = false;
+  isVisible: boolean = false;
 
   constructor(
     private employeeService: EmployeeService) {
@@ -36,28 +38,40 @@ export class EmployeeComponent implements OnInit {
           }
         },
         error: (error) => {
-          console.log(error)
           this.errorMessage = error
         }
       })
   }
 
   deleteEmployee(id: number | undefined) {
+    this.isLoading = true
     this.employeeService
       .delete(id!)
       .subscribe({
         next: (res) => {
           if (200 != res.statusCode) {
             this.errorMessage = res.message
+            this.isVisible = true;
+            this.showMessage()
           }
         },
         error: (error) => {
-          console.log(error)
           this.errorMessage = error
+          this.isVisible = true;
+          this.showMessage()
         },
         complete: () => {
+          this.isLoading = false
+          this.isVisible = false
           this.findAllEmployees()
         }
       })
   }
+
+  showMessage(): void {
+    setTimeout(() => {
+      this.isVisible = false;
+    }, 2000);
+  }
+
 }

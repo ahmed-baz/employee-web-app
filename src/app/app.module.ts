@@ -11,6 +11,7 @@ import {MaxLengthPipe} from './school/pipes/max-length.pipe';
 import {HttpClient, provideHttpClient} from '@angular/common/http';
 import {EmployeeDetailsComponent} from './employee/cmoponents/employee-details/employee-details.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
+import { SpinnerComponent } from './components/spinner/spinner.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
     TaskComponent,
     MaxLengthPipe,
     EmployeeDetailsComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    SpinnerComponent
   ],
   imports: [
     BrowserModule,

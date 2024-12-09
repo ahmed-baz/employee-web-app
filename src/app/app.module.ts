@@ -12,6 +12,7 @@ import {HttpClient, provideHttpClient} from '@angular/common/http';
 import {EmployeeDetailsComponent} from './employee/cmoponents/employee-details/employee-details.component';
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { SpinnerComponent } from './components/spinner/spinner.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { SpinnerComponent } from './components/spinner/spinner.component';
     MaxLengthPipe,
     EmployeeDetailsComponent,
     PageNotFoundComponent,
-    SpinnerComponent
+    SpinnerComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,

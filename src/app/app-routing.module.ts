@@ -3,11 +3,16 @@ import {RouterModule, Routes} from '@angular/router';
 import {StudentComponent} from './school/pages/student/student.component';
 import {EmployeeComponent} from './employee/pages/employee/employee.component';
 import {TaskComponent} from './school/pages/task/task.component';
+import {EmployeeDetailsComponent} from './employee/cmoponents/employee-details/employee-details.component';
 
 const routes: Routes = [
   {
     path: '',
     component: EmployeeComponent
+  },
+  {
+    path: 'employees/:id',
+    component: EmployeeDetailsComponent
   },
   {
     path: 'students',

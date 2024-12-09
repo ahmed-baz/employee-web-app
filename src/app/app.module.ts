@@ -9,6 +9,7 @@ import {EmployeeComponent} from './employee/pages/employee/employee.component';
 import {TaskComponent} from './school/pages/task/task.component';
 import {MaxLengthPipe} from './school/pipes/max-length.pipe';
 import {HttpClient, provideHttpClient} from '@angular/common/http';
+import {EmployeeDetailsComponent} from './employee/cmoponents/employee-details/employee-details.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import {HttpClient, provideHttpClient} from '@angular/common/http';
     StudentComponent,
     EmployeeComponent,
     TaskComponent,
-    MaxLengthPipe
+    MaxLengthPipe,
+    EmployeeDetailsComponent
   ],
   imports: [
     BrowserModule,

@@ -21,6 +21,10 @@ export class EmployeeService {
     return this.httpClient.get<AppResponse<Employee[]>>(`${environment.emp_url}`);
   }
 
+  public find(id: number) {
+    return this.httpClient.get<AppResponse<Employee>>(`${environment.emp_url}/${id}`);
+  }
+
 
   public update(id: number, employee: Employee) {
     return this.httpClient.put<AppResponse<Employee>>(`${environment.emp_url}/${id}`, employee);

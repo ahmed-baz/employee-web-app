@@ -1,0 +1,28 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+}
+
+.card {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.card-title {
+  font-size: 24px;
+  color: #333;
+}
+
+.list-group-item {
+  font-size: 18px;
+  padding: 10px 15px;
+}
+
+.list-group-item strong {
+  color: #007bff;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}

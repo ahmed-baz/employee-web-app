@@ -11,7 +11,8 @@
     <thead>
     <tr>
       <th>#</th>
-      <th>Name</th>
+      <th>Full Name</th>
+      <th>Email</th>
       <th>Salary</th>
       <th>Join Date</th>
       <th scope="col">Delete</th>
@@ -24,6 +25,7 @@
       <td>
         <a routerLink="/employees/{{ employee.id }}"> {{ employee.firstName }} {{ employee.lastName }} </a>
       </td>
+      <td>{{ employee.email | maxLength: 30 }}</td>
       <td>{{ employee.salary }} $</td>
       <td>{{ employee.joinDate | date : 'yyyy-MM-dd' }}</td>
       <td>

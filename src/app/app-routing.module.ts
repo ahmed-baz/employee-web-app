@@ -4,6 +4,7 @@ import {StudentComponent} from './school/pages/student/student.component';
 import {EmployeeComponent} from './employee/pages/employee/employee.component';
 import {TaskComponent} from './school/pages/task/task.component';
 import {EmployeeDetailsComponent} from './employee/cmoponents/employee-details/employee-details.component';
+import {PageNotFoundComponent} from './components/page-not-found/page-not-found.component';
 
 const routes: Routes = [
   {
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path: 'tasks',
     component: TaskComponent
+  },
+  {
+    path: '**',
+    component: PageNotFoundComponent
   }
 ];
 
